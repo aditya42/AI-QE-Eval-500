@@ -1,0 +1,24 @@
+{
+  "name": "AI-QE-Eval-500",
+  "version": "1.0.0",
+  "records": 500,
+  "categories": {
+    "requirement_analysis": 100,
+    "test_generation": 100,
+    "debugging": 75,
+    "root_cause_analysis": 75,
+    "automation_review": 50,
+    "api_testing": 50,
+    "risk_assessment": 50
+  },
+  "splits": {
+    "train": 349,
+    "dev": 76,
+    "test": 75
+  },
+  "license": "MIT",
+  "language": [
+    "en"
+  ],
+  "source_type": "synthetic"
+}

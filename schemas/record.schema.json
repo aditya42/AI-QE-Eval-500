@@ -1,0 +1,166 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI-QE-Eval-500 Record",
+  "type": "object",
+  "required": [
+    "id",
+    "category",
+    "task_type",
+    "difficulty",
+    "input",
+    "expected_capability",
+    "reference",
+    "rubric",
+    "risk",
+    "failure_category",
+    "tags",
+    "metadata",
+    "fingerprint"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^AIQE-[0-9]{4}$"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "requirement_analysis",
+        "test_generation",
+        "debugging",
+        "root_cause_analysis",
+        "automation_review",
+        "api_testing",
+        "risk_assessment"
+      ]
+    },
+    "task_type": {
+      "type": "string"
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "easy",
+        "medium",
+        "hard"
+      ]
+    },
+    "input": {
+      "type": "string",
+      "minLength": 30
+    },
+    "expected_capability": {
+      "type": "string",
+      "minLength": 10
+    },
+    "reference": {
+      "type": "string",
+      "minLength": 30
+    },
+    "rubric": {
+      "type": "object",
+      "required": [
+        "scoring_scale",
+        "criteria",
+        "passing_score"
+      ],
+      "properties": {
+        "scoring_scale": {
+          "type": "string"
+        },
+        "criteria": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "weight",
+              "description"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "weight": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "description": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "passing_score": {
+          "type": "number"
+        }
+      }
+    },
+    "risk": {
+      "type": "string",
+      "enum": [
+        "LOW",
+        "MEDIUM",
+        "HIGH",
+        "CRITICAL"
+      ]
+    },
+    "failure_category": {
+      "type": "string",
+      "enum": [
+        "REQUIREMENT_AMBIGUITY",
+        "MISSING_EDGE_CASE",
+        "INCORRECT_ASSERTION",
+        "TEST_DATA_ISSUE",
+        "ENVIRONMENT_FAILURE",
+        "DEPENDENCY_FAILURE",
+        "UI_LOCATOR_FAILURE",
+        "ASYNC_TIMING_ISSUE",
+        "API_CONTRACT_FAILURE",
+        "AUTHORIZATION_FAILURE",
+        "PERFORMANCE_REGRESSION",
+        "DATA_CONSISTENCY_FAILURE",
+        "FLAKY_TEST",
+        "INVALID_TEST_DESIGN",
+        "RISK_UNDERESTIMATION",
+        "OBSERVABILITY_GAP",
+        "LOCALIZATION_DEFECT",
+        "ACCESSIBILITY_DEFECT",
+        "SECURITY_RISK",
+        "BUSINESS_LOGIC_FAILURE"
+      ]
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 2
+    },
+    "metadata": {
+      "type": "object",
+      "required": [
+        "source",
+        "version",
+        "language"
+      ],
+      "properties": {
+        "source": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string"
+        }
+      }
+    },
+    "fingerprint": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{12}$"
+    }
+  }
+}

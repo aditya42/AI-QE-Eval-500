@@ -1,0 +1,339 @@
+[
+  {
+    "id": "AIQE-0001",
+    "category": "requirement_analysis",
+    "task_type": "analysis",
+    "difficulty": "easy",
+    "input": "You are reviewing a requirement for e-commerce checkout. The requirement says: 'The system should complete the user action quickly and show the correct result.' Context indicates ambiguous acceptance criteria. Analyze the requirement, identify testability gaps, list assumptions, and propose improved acceptance criteria.",
+    "expected_capability": "identify ambiguity, assumptions, and clarifying questions",
+    "reference": "A strong answer should explicitly identify the ambiguous acceptance criteria, distinguish assumptions from facts, ask targeted clarifying questions, and rewrite the requirement into measurable acceptance criteria covering happy path, negative path, boundaries, and relevant non-functional expectations for e-commerce checkout.",
+    "rubric": {
+      "scoring_scale": "0-4",
+      "criteria": [
+        {
+          "name": "gap_detection",
+          "weight": 0.3,
+          "description": "Identifies material ambiguity, missing constraints, and untestable language."
+        },
+        {
+          "name": "clarifying_questions",
+          "weight": 0.2,
+          "description": "Asks precise questions that materially reduce uncertainty."
+        },
+        {
+          "name": "testable_rewrite",
+          "weight": 0.3,
+          "description": "Produces measurable acceptance criteria with observable outcomes."
+        },
+        {
+          "name": "risk_awareness",
+          "weight": 0.2,
+          "description": "Surfaces relevant edge cases and non-functional concerns."
+        }
+      ],
+      "passing_score": 3.0
+    },
+    "risk": "LOW",
+    "failure_category": "REQUIREMENT_AMBIGUITY",
+    "tags": [
+      "e-commerce checkout",
+      "requirements",
+      "acceptance-criteria",
+      "ambiguous-acceptance-criteria"
+    ],
+    "metadata": {
+      "source": "synthetic",
+      "version": "1.0",
+      "language": "en"
+    },
+    "fingerprint": "f3eb0ec51cad"
+  },
+  {
+    "id": "AIQE-0101",
+    "category": "test_generation",
+    "task_type": "generation",
+    "difficulty": "easy",
+    "input": "Generate a compact but high-value test set for e-commerce checkout. Primary focus: positive happy path. Include preconditions, test steps, expected results, and explain why each case matters. Avoid redundant permutations and prioritize risk-based coverage.",
+    "expected_capability": "generate risk-based tests emphasizing positive happy path",
+    "reference": "The response should produce distinct, executable tests for e-commerce checkout, with explicit preconditions, actions, and expected outcomes. It should include positive happy path coverage, avoid duplicates, and explain prioritization.",
+    "rubric": {
+      "scoring_scale": "0-4",
+      "criteria": [
+        {
+          "name": "coverage",
+          "weight": 0.35,
+          "description": "Covers the requested behavior and material edge cases."
+        },
+        {
+          "name": "executability",
+          "weight": 0.25,
+          "description": "Tests contain clear setup, actions, and observable expectations."
+        },
+        {
+          "name": "non_redundancy",
+          "weight": 0.15,
+          "description": "Avoids duplicate or low-value permutations."
+        },
+        {
+          "name": "risk_prioritization",
+          "weight": 0.25,
+          "description": "Prioritizes tests using impact and failure likelihood."
+        }
+      ],
+      "passing_score": 3.0
+    },
+    "risk": "LOW",
+    "failure_category": "MISSING_EDGE_CASE",
+    "tags": [
+      "e-commerce checkout",
+      "test-generation",
+      "positive-happy-path"
+    ],
+    "metadata": {
+      "source": "synthetic",
+      "version": "1.0",
+      "language": "en"
+    },
+    "fingerprint": "4d2693a8e09e"
+  },
+  {
+    "id": "AIQE-0201",
+    "category": "debugging",
+    "task_type": "diagnosis",
+    "difficulty": "easy",
+    "input": "In a e-commerce checkout automation suite, Playwright test intermittently times out after clicking Submit. Provide the most likely causes, the minimum diagnostic steps to isolate the issue, and a maintainable fix. Distinguish evidence from hypothesis.",
+    "expected_capability": "systematic debugging and evidence-driven fault isolation",
+    "reference": "A strong answer should form a small ranked hypothesis set, gather evidence before changing code, inspect synchronization/test data/environment/dependencies as relevant, and recommend a root-cause fix rather than increasing sleeps or blanket retries.",
+    "rubric": {
+      "scoring_scale": "0-4",
+      "criteria": [
+        {
+          "name": "hypothesis_quality",
+          "weight": 0.25,
+          "description": "Generates plausible causes tied to the observed symptom."
+        },
+        {
+          "name": "diagnostic_sequence",
+          "weight": 0.3,
+          "description": "Uses efficient evidence-gathering steps in a logical order."
+        },
+        {
+          "name": "root_cause_fix",
+          "weight": 0.3,
+          "description": "Recommends a maintainable fix instead of masking symptoms."
+        },
+        {
+          "name": "evidence_discipline",
+          "weight": 0.15,
+          "description": "Clearly separates observed facts from assumptions."
+        }
+      ],
+      "passing_score": 3.0
+    },
+    "risk": "LOW",
+    "failure_category": "ASYNC_TIMING_ISSUE",
+    "tags": [
+      "e-commerce checkout",
+      "debugging",
+      "async_timing_issue"
+    ],
+    "metadata": {
+      "source": "synthetic",
+      "version": "1.0",
+      "language": "en"
+    },
+    "fingerprint": "918ca0d19677"
+  },
+  {
+    "id": "AIQE-0276",
+    "category": "root_cause_analysis",
+    "task_type": "rca",
+    "difficulty": "easy",
+    "input": "Perform root-cause analysis for this incident in e-commerce checkout: checkout test fails because inventory API returns 503. Return: probable root cause, supporting evidence to collect, competing hypotheses, containment, permanent corrective action, and regression-prevention checks.",
+    "expected_capability": "causal reasoning for software-quality incidents",
+    "reference": "The answer should avoid jumping from symptom to cause. It should identify evidence required to prove causality, compare at least one alternative hypothesis, separate containment from corrective action, and add a prevention mechanism such as monitoring, contract tests, or regression coverage.",
+    "rubric": {
+      "scoring_scale": "0-4",
+      "criteria": [
+        {
+          "name": "causal_reasoning",
+          "weight": 0.35,
+          "description": "Builds a defensible causal chain rather than restating symptoms."
+        },
+        {
+          "name": "evidence_plan",
+          "weight": 0.25,
+          "description": "Specifies evidence needed to confirm or reject hypotheses."
+        },
+        {
+          "name": "corrective_action",
+          "weight": 0.2,
+          "description": "Proposes durable remediation with clear ownership surface."
+        },
+        {
+          "name": "prevention",
+          "weight": 0.2,
+          "description": "Adds monitoring/tests/controls to reduce recurrence."
+        }
+      ],
+      "passing_score": 3.0
+    },
+    "risk": "LOW",
+    "failure_category": "DEPENDENCY_FAILURE",
+    "tags": [
+      "e-commerce checkout",
+      "rca",
+      "dependency_failure"
+    ],
+    "metadata": {
+      "source": "synthetic",
+      "version": "1.0",
+      "language": "en"
+    },
+    "fingerprint": "6cf1e56f040d"
+  },
+  {
+    "id": "AIQE-0351",
+    "category": "automation_review",
+    "task_type": "code_review",
+    "difficulty": "easy",
+    "input": "Review this test-automation pattern used in a e-commerce checkout suite:\n\nawait page.waitForTimeout(5000)\n\nIdentify the maintainability/reliability problem, explain its impact, and propose a Playwright-oriented improvement.",
+    "expected_capability": "review automation code for reliability, maintainability, and test-design quality",
+    "reference": "The answer should explain why the pattern is problematic and replace fixed waits with condition-based synchronization. It should prefer stable locators, auto-waiting, isolated data, explicit assertions, reusable fixtures, and failure transparency where applicable.",
+    "rubric": {
+      "scoring_scale": "0-4",
+      "criteria": [
+        {
+          "name": "issue_detection",
+          "weight": 0.3,
+          "description": "Correctly identifies the core test-design or implementation smell."
+        },
+        {
+          "name": "impact_analysis",
+          "weight": 0.2,
+          "description": "Explains reliability, maintainability, or diagnostic impact."
+        },
+        {
+          "name": "playwright_fix",
+          "weight": 0.35,
+          "description": "Suggests idiomatic Playwright/test-architecture improvement."
+        },
+        {
+          "name": "scope_control",
+          "weight": 0.15,
+          "description": "Keeps recommendation minimal and targeted."
+        }
+      ],
+      "passing_score": 3.0
+    },
+    "risk": "LOW",
+    "failure_category": "INVALID_TEST_DESIGN",
+    "tags": [
+      "e-commerce checkout",
+      "automation-review",
+      "playwright"
+    ],
+    "metadata": {
+      "source": "synthetic",
+      "version": "1.0",
+      "language": "en"
+    },
+    "fingerprint": "0a64f0c5553a"
+  },
+  {
+    "id": "AIQE-0401",
+    "category": "api_testing",
+    "task_type": "api_test_design",
+    "difficulty": "easy",
+    "input": "Design API tests for POST /orders in a e-commerce checkout service. Focus on: validate creation, contract, idempotency, auth, and persistence. Include status codes, contract assertions, negative cases, and data-state validation. Call out any cases that require idempotency, authorization, or concurrency checks.",
+    "expected_capability": "design layered API tests across contract, behavior, security, and persistence",
+    "reference": "The answer should cover protocol behavior, business semantics, schema/contract validation, negative paths, authorization boundaries, and state verification. It should avoid checking only HTTP status.",
+    "rubric": {
+      "scoring_scale": "0-4",
+      "criteria": [
+        {
+          "name": "contract_coverage",
+          "weight": 0.25,
+          "description": "Validates schema, required fields, types, and compatibility."
+        },
+        {
+          "name": "business_semantics",
+          "weight": 0.3,
+          "description": "Checks state transitions and business rules, not only status codes."
+        },
+        {
+          "name": "negative_security",
+          "weight": 0.25,
+          "description": "Covers invalid input, authorization, and abuse-related cases."
+        },
+        {
+          "name": "state_validation",
+          "weight": 0.2,
+          "description": "Verifies persistence, side effects, and idempotency where relevant."
+        }
+      ],
+      "passing_score": 3.0
+    },
+    "risk": "LOW",
+    "failure_category": "API_CONTRACT_FAILURE",
+    "tags": [
+      "e-commerce checkout",
+      "api-testing",
+      "post"
+    ],
+    "metadata": {
+      "source": "synthetic",
+      "version": "1.0",
+      "language": "en"
+    },
+    "fingerprint": "c3797affd809"
+  },
+  {
+    "id": "AIQE-0451",
+    "category": "risk_assessment",
+    "task_type": "risk_analysis",
+    "difficulty": "easy",
+    "input": "Assess release risk for payment service migration before holiday traffic in a e-commerce checkout product. Consider financial loss, conversion impact, rollback readiness. Produce a risk level, rationale, highest-risk failure modes, minimum release gates, observability needs, and rollback/containment criteria.",
+    "expected_capability": "risk-based quality planning and release decision support",
+    "reference": "The answer should evaluate impact \u00d7 likelihood, identify the highest-risk failure modes, connect tests to those risks, define measurable release gates, and include monitoring plus rollback criteria.",
+    "rubric": {
+      "scoring_scale": "0-4",
+      "criteria": [
+        {
+          "name": "risk_model",
+          "weight": 0.3,
+          "description": "Uses impact and likelihood to justify prioritization."
+        },
+        {
+          "name": "failure_modes",
+          "weight": 0.25,
+          "description": "Identifies concrete, high-value failure modes."
+        },
+        {
+          "name": "release_gates",
+          "weight": 0.25,
+          "description": "Defines measurable go/no-go quality gates."
+        },
+        {
+          "name": "observability_rollback",
+          "weight": 0.2,
+          "description": "Includes monitoring and containment/rollback criteria."
+        }
+      ],
+      "passing_score": 3.0
+    },
+    "risk": "LOW",
+    "failure_category": "RISK_UNDERESTIMATION",
+    "tags": [
+      "e-commerce checkout",
+      "risk-assessment",
+      "release-quality"
+    ],
+    "metadata": {
+      "source": "synthetic",
+      "version": "1.0",
+      "language": "en"
+    },
+    "fingerprint": "318f62a9dff5"
+  }
+]
